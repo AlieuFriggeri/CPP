@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+         #
+#    By: kistod <kistod@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 10:58:16 by afrigger          #+#    #+#              #
-#    Updated: 2023/03/30 13:39:01 by afrigger         ###   ########.fr        #
+#    Updated: 2023/04/03 16:02:13 by kistod           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RESET = \033[0m
 NAME =     phonebook
 
 CC =         c++
-CFLAGS =     -Wall -Wextra -Werror -std=c++98
+CFLAGS =     -Wall -Wextra -Werror -std=c++98 -g
 RM =         rm -rf
 
 DIR_H = headers/
