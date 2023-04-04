@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:23:43 by afrigger          #+#    #+#             */
-/*   Updated: 2023/04/03 16:18:23 by kistod           ###   ########.fr       */
+/*   Updated: 2023/04/04 13:44:39 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,40 +20,48 @@
 int main()
 {
 	PhoneBook repertoire;
-	char	input[100];
+	std::string	input;
+	int		nb;
 	int i = 0;
-	int index = 0;
 
-	while (1)
+	while (true)
 	{
-/* 		if (i != 0)
-			std::cout << repertoire.contacts[index].prenom << std::endl; */
 		std::cout << "Que voulez vous faire?" << std::endl;
 		std::cin >> input;
-		if (strncmp(input, "EXIT", 4) == 0)
+		if (input.compare("EXIT") == 0)
 			break;
-		else if (strncmp(input, "ADD", 3) == 0)
+		else if (std::cin.eof())
+			break;
+		else if (input.compare("ADD") == 0)
 		{
-			repertoire.contacts->AddContact(input, i);
+			repertoire.contacts[i].AddContact(input, i);
 			i++;
 		}
-		else if (strncmp(input, "SEARCH", 6) == 0)
+		else if (input.compare("SEARCH") == 0)
 		{
+			repertoire.contacts->PrintStart();
+			for(int index = 0; index < 8 && repertoire.contacts[index].prenom.length() > 0; index++)
+				{
+					repertoire.contacts[index].PrintContact(index);
+				}
 			while (1)
 			{
 				std::cout << "Entrez l'index du contact rechercher" << std::endl;
-				std::cin >> input;
-				if (strlen(input) > 1 || atoi(input) > 7 || atoi(input) < 0)
+				std::cin >> nb;
+				if (nb > 7 || nb < 0)
 					std::cout << "index non valide, vueillez entrez un chiffre (0 - 7)";
+				else if (repertoire.contacts[nb].prenom.length() == 0)
+					std::cout << "Aucun contact avec cet index enregistrer pour le moment" << std::endl;
 				else
 				{
-					index = atoi(input);
-					repertoire.contacts->PrintContact(index);
+					repertoire.contacts->PrintStart();
+					repertoire.contacts[nb].PrintContact(nb);
+					std::cout << " ___________________________________________" << std::endl;
 					break;
 				}
 			}
 		}
-		if (i >= 7)
+		if (i > 7)
 			i = 0;
 	}
 	return (0);

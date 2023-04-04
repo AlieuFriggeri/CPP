@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kistod <kistod@student.42.fr>              +#+  +:+       +#+        */
+/*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:23:50 by afrigger          #+#    #+#             */
-/*   Updated: 2023/04/03 16:06:21 by kistod           ###   ########.fr       */
+/*   Updated: 2023/04/04 13:47:40 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <iomanip>
 #include <cstdlib>
 #include "../headers/contact.hpp"
@@ -28,28 +28,75 @@ Contact::~Contact(void){
 	return;
 }
 
-void Contact::AddContact(char *str, int i){
-	std::cout << "Insérez prénom du contact :" << std::endl;
-	std::cin >> str;
-	strcpy(this[i].prenom, str);
+void Contact::AddContact(std::string str, int i){
+	std::cout << "Insérez Prénom du contact :" << std::endl;
+	do{
+	std::getline(std::cin,  str);
+	if (std::cin.eof())
+		exit(1);
+	}while(str.empty());
+	this->prenom = str;
 	std::cout << "Insérez Nom du contact :" << std::endl;
-	std::cin >> str;
-	strcpy(this[i].nom, str);
-	std::cout << "Insérez surnom du contact :" << std::endl;
-	std::cin >> str;
-	strcpy(this[i].surnom, str);
-	std::cout << "Insérez le numéro du contact :" << std::endl;
-	std::cin >> str;
-	strcpy(this[i].number, str);
-	std::cout << "Quel est son plus grand secret?:" << std::endl;
-	std::cin >> str;
-	strcpy(this[i].secret, str);
+	do{
+	std::getline(std::cin,  str);
+	if (std::cin.eof())
+		exit(1);
+	}while(str.empty());
+	this->nom = str;
+	std::cout << "Insérez Surnom du contact :" << std::endl;
+	do{
+	std::getline(std::cin,  str);
+	if (std::cin.eof())
+		exit(1);
+	}while(str.empty());
+	this->surnom = str;
+	std::cout << "Insérez le Numéro du contact :" << std::endl;
+	do{
+	std::getline(std::cin,  str);
+	if (std::cin.eof())
+		exit(1);
+	}while(str.empty());
+	this->number = str;
+	std::cout << "Quel est son plus grand Secret?:" << std::endl;
+	do{
+	std::getline(std::cin,  str);
+	if (std::cin.eof())
+		exit(1);
+	}while(str.empty());
+	this->secret = str;
 	std::cout << "Contact numero " << i << " enregistré" << std::endl;
 }
 
 void Contact::PrintContact(int i){
-	std::cout << "Index du contact : " << i << std::endl;
-	std::cout << "Prénom du contact : " << this[i].prenom << std::endl;
-	std::cout << "Nom du contact : " << this[i].nom << std::endl;
-	std::cout << "Surnom du contact : " << this[i].surnom << std::endl;
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << std::setfill(' ');
+	std::cout << i;
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << std::setfill(' ');
+	if (this->prenom.length() > 10)
+		std::cout << this->prenom.substr(0, 9);
+	else
+		std::cout << this->prenom;
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << std::setfill(' ');
+	if (this->prenom.length() > 10)
+		std::cout << this->nom.substr(0, 9);
+	else
+		std::cout << this->nom;
+	std::cout << "|";
+	std::cout << std::setw(10);
+	std::cout << std::setfill(' ');
+	if (this->prenom.length() > 10)
+		std::cout << this->surnom.substr(0, 9);
+	else
+		std::cout << this->surnom;
+	std::cout << "|" << std::endl;
+}
+
+void Contact::PrintStart(void){
+	std::cout << " ___________________________________________" << std::endl;
+	std::cout << "|     Index|    Prenom|       Nom|    Surnom|" << std::endl;
 }
