@@ -6,7 +6,7 @@
 /*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:23:50 by afrigger          #+#    #+#             */
-/*   Updated: 2023/04/04 13:47:40 by afrigger         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:08:46 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,21 +75,21 @@ void Contact::PrintContact(int i){
 	std::cout << "|";
 	std::cout << std::setw(10);
 	std::cout << std::setfill(' ');
-	if (this->prenom.length() > 10)
+	if (this->prenom.length() >= 10)
 		std::cout << this->prenom.substr(0, 9);
 	else
 		std::cout << this->prenom;
 	std::cout << "|";
 	std::cout << std::setw(10);
 	std::cout << std::setfill(' ');
-	if (this->prenom.length() > 10)
+	if (this->prenom.length() >= 10)
 		std::cout << this->nom.substr(0, 9);
 	else
 		std::cout << this->nom;
 	std::cout << "|";
 	std::cout << std::setw(10);
 	std::cout << std::setfill(' ');
-	if (this->prenom.length() > 10)
+	if (this->prenom.length() >= 10)
 		std::cout << this->surnom.substr(0, 9);
 	else
 		std::cout << this->surnom;
@@ -99,4 +99,17 @@ void Contact::PrintContact(int i){
 void Contact::PrintStart(void){
 	std::cout << " ___________________________________________" << std::endl;
 	std::cout << "|     Index|    Prenom|       Nom|    Surnom|" << std::endl;
+}
+
+void Contact::AddContact2(std::string str, int i){
+	AddContact(str, i);
+}
+
+void Contact::PrintContact2(int i){
+	PrintContact(i);
+}
+
+std::string Contact::GetPrenom(void)
+{
+	return (this->prenom);
 }

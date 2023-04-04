@@ -6,7 +6,7 @@
 /*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:23:43 by afrigger          #+#    #+#             */
-/*   Updated: 2023/04/04 13:44:39 by afrigger         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:06:17 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ int main()
 			break;
 		else if (input.compare("ADD") == 0)
 		{
-			repertoire.contacts[i].AddContact(input, i);
+			repertoire.contacts[i].AddContact2(input, i);
 			i++;
 		}
 		else if (input.compare("SEARCH") == 0)
 		{
 			repertoire.contacts->PrintStart();
-			for(int index = 0; index < 8 && repertoire.contacts[index].prenom.length() > 0; index++)
+			for(int index = 0; index < 8 && repertoire.contacts[index].GetPrenom().length() > 0; index++)
 				{
-					repertoire.contacts[index].PrintContact(index);
+					repertoire.contacts[index].PrintContact2(index);
 				}
 			while (1)
 			{
@@ -50,12 +50,12 @@ int main()
 				std::cin >> nb;
 				if (nb > 7 || nb < 0)
 					std::cout << "index non valide, vueillez entrez un chiffre (0 - 7)";
-				else if (repertoire.contacts[nb].prenom.length() == 0)
+				else if (repertoire.contacts[nb].GetPrenom().length() == 0)
 					std::cout << "Aucun contact avec cet index enregistrer pour le moment" << std::endl;
 				else
 				{
 					repertoire.contacts->PrintStart();
-					repertoire.contacts[nb].PrintContact(nb);
+					repertoire.contacts[nb].PrintContact2(nb);
 					std::cout << " ___________________________________________" << std::endl;
 					break;
 				}
