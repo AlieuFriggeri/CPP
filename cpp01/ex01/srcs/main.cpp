@@ -8,6 +8,6 @@ int main(){
 	horde = horde->zombieHorde(8, "franciss");
 	std::cout << "next" <<std::endl;
 	horde[2].announce();
-	delete horde;
+	delete [] horde;
 	return (0);
 }
