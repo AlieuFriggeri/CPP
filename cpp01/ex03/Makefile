@@ -6,7 +6,7 @@
 #    By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 10:58:16 by afrigger          #+#    #+#              #
-#    Updated: 2023/04/13 11:53:17 by afrigger         ###   ########.fr        #
+#    Updated: 2023/04/14 12:45:28 by afrigger         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ RED = \033[0;31m
 GREY = \033[38;5;240m
 RESET = \033[0m
 
-NAME =     useless_violence=
+NAME =     useless_violence
 
 CC =         c++
 CFLAGS =     -Wall -Wextra -Werror -std=c++98
