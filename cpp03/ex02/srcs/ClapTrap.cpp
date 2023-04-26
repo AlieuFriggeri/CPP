@@ -44,3 +44,9 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &src){
 		*this = src;
 	return *this;
 }
+
+void ClapTrap::printStats(void){
+	std::cout << this->name << " Attack damage is: " << this->Attackdamage << std::endl;
+	std::cout << this->name << " Energy points is: " << this->Energypoints << std::endl;
+	std::cout << this->name << " Hit points is: " << this->Hitpoints << std::endl;
+}
