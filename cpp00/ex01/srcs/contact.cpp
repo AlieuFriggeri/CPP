@@ -6,7 +6,7 @@
 /*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:23:50 by afrigger          #+#    #+#             */
-/*   Updated: 2023/04/04 16:08:46 by afrigger         ###   ########.fr       */
+/*   Updated: 2023/07/11 15:57:39 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 #include <string>
 #include <iomanip>
 #include <cstdlib>
-#include "../headers/contact.hpp"
+#include "../headers/Contact.hpp"
 
 Contact::Contact(void){
 	
-	std::cout << "Contact Constructor called" << std::endl;
+	//std::cout << "Contact Constructor called" << std::endl;
 	return;
 }
 
 Contact::~Contact(void){
 
-	std::cout << "Contact Destructor called" << std::endl;
+	//std::cout << "Contact Destructor called" << std::endl;
 	return;
 }
 
@@ -64,33 +64,33 @@ void Contact::AddContact(std::string str, int i){
 		exit(1);
 	}while(str.empty());
 	this->secret = str;
-	std::cout << "Contact numero " << i << " enregistré" << std::endl;
+	std::cout << "Contact numero " << i + 1 << " enregistré" << std::endl;
 }
 
 void Contact::PrintContact(int i){
 	std::cout << "|";
 	std::cout << std::setw(10);
 	std::cout << std::setfill(' ');
-	std::cout << i;
+	std::cout << i + 1;
 	std::cout << "|";
 	std::cout << std::setw(10);
 	std::cout << std::setfill(' ');
 	if (this->prenom.length() >= 10)
-		std::cout << this->prenom.substr(0, 9);
+		std::cout << this->prenom.substr(0, 8) + '.';
 	else
 		std::cout << this->prenom;
 	std::cout << "|";
 	std::cout << std::setw(10);
 	std::cout << std::setfill(' ');
 	if (this->prenom.length() >= 10)
-		std::cout << this->nom.substr(0, 9);
+		std::cout << this->nom.substr(0, 8) + '.';
 	else
 		std::cout << this->nom;
 	std::cout << "|";
 	std::cout << std::setw(10);
 	std::cout << std::setfill(' ');
 	if (this->prenom.length() >= 10)
-		std::cout << this->surnom.substr(0, 9);
+		std::cout << this->surnom.substr(0, 8) + '.';
 	else
 		std::cout << this->surnom;
 	std::cout << "|" << std::endl;

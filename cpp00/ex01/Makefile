@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kistod <kistod@student.42.fr>              +#+  +:+       +#+         #
+#    By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 10:58:16 by afrigger          #+#    #+#              #
-#    Updated: 2023/04/03 16:02:13 by kistod           ###   ########.fr        #
+#    Updated: 2023/07/11 13:14:26 by afrigger         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ DIR_H = headers/
 DIR_S =	srcs/
 DIR_O =	objs/
 
-SRCS_LIST =	phonebook.cpp contact.cpp main.cpp
+SRCS_LIST =	PhoneBook.cpp Contact.cpp main.cpp
 
 SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
 
