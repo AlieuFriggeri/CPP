@@ -9,8 +9,9 @@ int main()
 const Dog* j = new Dog();
 // const Animal* i = new Cat();
 // const Dog *k = new Dog();
-const Dog l(*j);
+const Animal l(*j);
 delete j;
+std::cout << l.getType() << std::endl;
 l.makeSound();
 // delete k; //should not create a leak
 // delete i;
