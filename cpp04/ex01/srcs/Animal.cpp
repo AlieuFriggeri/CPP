@@ -14,6 +14,7 @@ Animal::Animal()
 
 Animal::Animal(Animal const &src){
 	*this = src;
+	//this->type = src.type;
 	std::cout << "Animal " << "copy constructor called" << std::endl;
 }
 

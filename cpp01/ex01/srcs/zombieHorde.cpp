@@ -5,7 +5,7 @@ Zombie *Zombie::zombieHorde(int N, std::string name){
 	for (int i = 0; i < N; i++)
 	{
 		horde[i].name = name;
-		//horde[i].announce();
+		horde[i].announce();
 	}
 	return (horde);
 }

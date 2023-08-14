@@ -15,9 +15,8 @@ public:
     Cat &operator=(Cat const &src);
     virtual void  makeSound(void) const;
     std::string getType() const;
-    Brain *brain;
 private:
-    
+    Brain *brain;
 };
 
 #endif

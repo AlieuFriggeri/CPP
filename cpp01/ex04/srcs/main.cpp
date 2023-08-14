@@ -20,20 +20,6 @@ int	strReplace(std::string line, char **av){
 	}
 	outfile.close();
 	return (0);
-	// start = 0;
-	// end = line.find(s1);
-	// std::cout <<line << " " <<  end << std::endl;
-	// while (end != std::string::npos && end < line.size())
-	// {
-	// 	res.append(line, start, end);
-	// 	res.append(s2);
-	// 	start = end + 1;
-	// 	end = line.find(s1, start);
-	// 	// std::cout << end << " "<< res << std::endl;
-	// 	// return (NULL);
-	// }
-	//res.append(s2, start);
-	//return (res);
 }
 
 int main(int ac, char **av){

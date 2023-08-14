@@ -10,6 +10,6 @@ int main(){
 	Zombie2.newZombie("karl");
 	Zombie2.announce();
 	Zombie3.randomChump("fred");
-	Zombie2.announce();
+	Zombie3.announce();
 	return (0);
 }

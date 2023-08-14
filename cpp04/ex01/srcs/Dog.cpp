@@ -14,7 +14,8 @@ Dog::Dog()
 }
 
 Dog::Dog(Dog const &src){
-	*this = src;
+	this->type = src.type;
+	this->brain = new Brain();
 	std::cout << "Dog " << "copy constructor called" << std::endl;
 }
 

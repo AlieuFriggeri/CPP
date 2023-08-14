@@ -6,7 +6,7 @@
 /*   By: afrigger <afrigger@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 13:23:43 by afrigger          #+#    #+#             */
-/*   Updated: 2023/07/11 15:57:50 by afrigger         ###   ########.fr       */
+/*   Updated: 2023/07/12 11:42:12 by afrigger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main()
 
 	while (true)
 	{
-		std::cout << "Que voulez vous faire?" << std::endl;
+		std::cout << "Que voulez vous faire? (ADD / SEARCH / EXIT)" << std::endl;
 		std::cin >> input;
 		if (input.compare("EXIT") == 0)
 			break;
@@ -45,6 +45,7 @@ int main()
 				{
 					repertoire.contacts[index].PrintContact2(index);
 				}
+			std::cout << "|___________________________________________|" << std::endl;
 			while (1)
 			{
 				std::cout << "Entrez l'index du contact rechercher" << std::endl;
