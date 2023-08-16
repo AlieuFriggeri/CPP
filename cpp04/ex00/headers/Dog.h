@@ -4,7 +4,7 @@
 #pragma once
 #include "Animal.h"
 
-class Dog : public Animal
+class Dog : virtual public Animal
 {
 public:
     //Dog(std::string type);

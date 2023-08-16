@@ -9,10 +9,11 @@ int main()
 const Dog* j = new Dog();
 const Cat* i = new Cat();
 const Dog *k = new Dog();
-const Animal l(*j);
+//const Animal l(*j);
 delete j;
-std::cout << l.getType() << std::endl;
-l.makeSound();
+//std::cout << l.getType() << std::endl;
+//l.makeSound();
+//const Animal *lol = new Animal(); // ne fonctionne pas (Animal est abstraite / purement virtuelle donc non instanciable)
 const Dog r(*k);
 const Cat s(*i);
 delete k; //should not create a leak

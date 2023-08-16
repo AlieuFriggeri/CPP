@@ -10,7 +10,7 @@ Cat::Cat()
 {
 	this->type = "Cat";
 	this->brain = new Brain();
-	std::cout << "Cat " <<"constructor called" << std::endl;
+	//std::cout << "Cat " <<"constructor called" << std::endl;
 }
 
 Cat::Cat(Cat const &src){
@@ -23,7 +23,7 @@ Cat::Cat(Cat const &src){
 Cat::~Cat()
 {
 	delete this->brain;
-	std::cout << "Cat " << "destructor called" << std::endl;
+	//std::cout << "Cat " << "destructor called" << std::endl;
 }
 
 Cat& Cat::operator=(Cat const &src){

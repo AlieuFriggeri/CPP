@@ -4,7 +4,7 @@
 #pragma once
 #include "WrongAnimal.h"
 
-class WrongCat : virtual public WrongAnimal
+class WrongCat : public WrongAnimal
 {
 public:
     //WrongCat(std::string type);
@@ -12,7 +12,7 @@ public:
     WrongCat(WrongCat const &src);
     ~WrongCat();
     WrongCat &operator=(WrongCat const &src);
-    void  makeSound(void) const;
+    virtual void  makeSound(void) const;
     std::string getType() const;
 private:
     

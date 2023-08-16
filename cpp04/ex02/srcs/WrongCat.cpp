@@ -29,7 +29,7 @@ WrongCat& WrongCat::operator=(WrongCat const &src){
 }
 
 void WrongCat::makeSound(void) const{
-	std::cout << "**WRONG_MIAOU**" << std::endl;
+	std::cout << "**MIAOU**" << std::endl;
 }
 
 std::string WrongCat::getType() const{

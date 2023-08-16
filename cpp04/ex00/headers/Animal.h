@@ -10,7 +10,7 @@ public:
     //Animal(std::string type);
     Animal(void);
     Animal(Animal const &src);
-    ~Animal();
+    virtual ~Animal();
     Animal &operator=(Animal const &src);
    virtual void    makeSound(void) const;
    std::string getType() const;
