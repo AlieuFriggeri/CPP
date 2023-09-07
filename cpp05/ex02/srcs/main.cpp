@@ -2,14 +2,13 @@
 #include <exception>
 #include <fstream>
 #include "../headers/Bureaucrat.hpp"
-#include "../headers/Form.hpp"
+#include "../headers/AForm.hpp"
+#include "../headers/ShrubberyCreationForm.hpp"
 
 int main()
 {
-	Form form;
+	ShrubberyCreationForm salut("test");
 	Bureaucrat john("john", 101);
-	form.beSigned(john);
-	john.signForm(form);
 	// try
 	// {
 	// 	john.gradeup();
