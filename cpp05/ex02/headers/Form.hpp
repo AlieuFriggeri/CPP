@@ -12,7 +12,6 @@ class Form
 {
 	public:
 		// Constructors
-		Form();
 		Form(const Form &copy);
 		Form(std::string name, bool sign, int toSign, int toRun);
 		
@@ -27,7 +26,7 @@ class Form
 		bool getSigned() const;
 		int getToSign() const;
 		int getToRun() const;
-		void beSigned(const Bureaucrat &src);
+		bool beSigned(const Bureaucrat &src);
 		virtual void execute(Bureaucrat const & executor) const = 0;
 		
 		// Exceptions
@@ -41,6 +40,7 @@ class Form
 		};
 		
 	private:
+		Form();
 		std::string _name;
 		bool _signed;
 		int _toSign;

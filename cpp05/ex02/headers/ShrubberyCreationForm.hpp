@@ -10,7 +10,7 @@ class ShrubberyCreationForm : public Form
 {
 	public:
 		// Constructors
-		ShrubberyCreationForm();
+		ShrubberyCreationForm(std::string const &target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		
 		// Destructor
@@ -22,7 +22,7 @@ class ShrubberyCreationForm : public Form
 		//methods
 		virtual void execute(Bureaucrat const &executor) const;
 	private:
-		
+		std::string _target;
 };
 
 #endif

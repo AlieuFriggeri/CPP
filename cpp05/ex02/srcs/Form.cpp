@@ -4,7 +4,7 @@
 Form::Form()
 {
 	_name = "Default form";
-	_signed = 1;
+	_signed = false;
 	_toSign = 100;
 	_toRun = 70;
 }
@@ -61,14 +61,15 @@ int Form::getToRun() const
 	return _toRun;
 }
 
-void Form::beSigned(const Bureaucrat &src)
+bool Form::beSigned(const Bureaucrat &src) 
 {
 	try
 	{
 		if (this->getToSign() >= src.getGrade())
 		{
-			this->_signed = 0;
-			std::cout << this->getName() << " has been signed!" << std::endl;
+			this->_signed = true;
+			std::cout << this->getName() << " has been signed by : " << src.getName() << std::endl;
+			return true;
 		}
 		else
 			throw(Form::GradeTooLowException());
@@ -76,18 +77,19 @@ void Form::beSigned(const Bureaucrat &src)
 	catch(Form::GradeTooLowException &e)
 	{
 		std::cerr << e.what() << '\n';
+		return false;
 	}
-	
+	return true;
 }
 
 // Exceptions
 const char * Form::GradeTooLowException::what() const throw()
 {
-	return "grade too low";
+	return "Grade of bureaucrat too low";
 }
 const char * Form::GradeTooHighException::what() const throw()
 {
-	return "grade too high";
+	return "Grade of bureaucrat too high";
 }
 
 /* std::ostream	&operator<<(std::ostream &out, const Form src){

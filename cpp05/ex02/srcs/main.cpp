@@ -7,10 +7,10 @@
 
 int main()
 {
-	ShrubberyCreationForm form;
-	Bureaucrat john("john", 101);
-	form.beSigned(john);
-	john.signForm(form);
+	ShrubberyCreationForm form("salut");
+	Bureaucrat john("John", 1);
+	//john.signForm(form);
+	form.execute(john);
 	// try
 	// {
 	// 	john.gradeup();
