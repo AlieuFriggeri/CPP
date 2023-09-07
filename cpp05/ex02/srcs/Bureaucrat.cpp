@@ -70,7 +70,7 @@ void	Bureaucrat::gradedown(void)
 	this->_grade += 1;
 }
 
-void  Bureaucrat::signForm(const AForm &src){
+void  Bureaucrat::signForm(const Form &src){
 	if (src.getSigned() == 0)
 		std::cout << this->getName() << " signed " << src.getName() << std::endl;
 	else

@@ -3,28 +3,25 @@
 
 # include <iostream>
 # include <string>
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
 
-class Bureaucrat;
-class AForm;
-
-class ShrubberyCreationForm : public AForm
+class ShrubberyCreationForm : public Form
 {
 	public:
 		// Constructors
+		ShrubberyCreationForm();
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-		ShrubberyCreationForm(const std::string & target);
 		
 		// Destructor
-		virtual ~ShrubberyCreationForm();
+		~ShrubberyCreationForm();
 		
 		// Operators
 		ShrubberyCreationForm & operator=(const ShrubberyCreationForm &assign);
-
-		ShrubberyCreationForm();
+		
+		//methods
+		virtual void execute(Bureaucrat const &executor) const;
 	private:
-		const std::string _target;
 		
 };
 

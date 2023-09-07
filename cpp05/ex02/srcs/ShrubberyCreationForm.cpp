@@ -1,23 +1,22 @@
 #include "ShrubberyCreationForm.hpp"
-#include "AForm.hpp"
-#include "Bureaucrat.hpp"
 
 // Constructors
-
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string & target) : _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm()
 {
-	std::cout << "constructor target: " << _target << std::endl;
+	std::cout << "\e[0;33mDefault Constructor called of ShrubberyCreationForm\e[0m" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &copy)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : Form(copy)
 {
-	*this = copy;
+	(void) copy;
+	std::cout << "\e[0;33mCopy Constructor called of ShrubberyCreationForm\e[0m" << std::endl;
 }
 
 
 // Destructor
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+	std::cout << "\e[0;31mDestructor called of ShrubberyCreationForm\e[0m" << std::endl;
 }
 
 
@@ -28,28 +27,9 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 	return *this;
 }
 
-/* std::string ShrubberyCreationForm::getName()
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	return this._name;
+	(void)executor;
+	std::cout << "salut" << std::endl;
 }
 
-bool ShrubberyCreationForm::getSigned()
-{
-	return this._signed;
-}
-
-int ShrubberyCreationForm::getToSign()
-{
-	return this._toSign;
-}
-
-int ShrubberyCreationForm::getToRun()
-{
-	return this.getToRun;
-}
-
-void ShrubberyCreationForm::beSigned(const Bureaucrat &src)
-{
-	if (src.getGrade <= this.getToSign)
-		this._signed = true;
-} */

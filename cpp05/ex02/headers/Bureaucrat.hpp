@@ -4,9 +4,9 @@
 # include <iostream>
 # include <string>
 # include <exception>
-#include "AForm.hpp"
+#include "Form.hpp"
 
-class AForm;
+class Form;
 
 class Bureaucrat
 {
@@ -28,7 +28,7 @@ class Bureaucrat
 
 		void gradeup(void);
 		void gradedown(void);
-		void  signForm(const AForm &src);
+		void  signForm(const Form &src);
 		class GradeTooHighException : public std::exception{
 			public:
 				virtual const char* what() const throw() {return "grade too high";}

@@ -1,5 +1,5 @@
-#ifndef AForm_HPP
-# define AForm_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
 # include <iostream>
 # include <string>
@@ -8,25 +8,27 @@
 
 class Bureaucrat;
 
-class AForm
+class Form
 {
 	public:
 		// Constructors
-		AForm(const AForm &copy);
-		AForm(std::string name, bool sign, int toSign, int toRun);
+		Form();
+		Form(const Form &copy);
+		Form(std::string name, bool sign, int toSign, int toRun);
 		
 		// Destructor
-		virtual ~AForm();
+		virtual ~Form();
 		
 		// Operators
-		AForm & operator=(const AForm &assign);
+		Form & operator=(const Form &assign);
 		
 		// Getters / Setters
-		virtual std::string getName() const;
+		std::string getName() const;
 		bool getSigned() const;
 		int getToSign() const;
 		int getToRun() const;
-		void beSigned(void);
+		void beSigned(const Bureaucrat &src);
+		virtual void execute(Bureaucrat const & executor) const = 0;
 		
 		// Exceptions
 		class GradeTooLowException : public std::exception {
@@ -45,5 +47,5 @@ class AForm
 		int _toRun;
 		
 };
-//std::ostream	&operator<<(std::ostream &out, const AForm src);
+//std::ostream	&operator<<(std::ostream &out, const Form src);
 #endif

@@ -6,7 +6,7 @@
 #    By: kistod <kistod@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 10:58:16 by afrigger          #+#    #+#              #
-#    Updated: 2023/09/07 13:57:20 by kistod           ###   ########.fr        #
+#    Updated: 2023/09/07 16:56:51 by kistod           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ DIR_H = headers/
 DIR_S =	srcs/
 DIR_O =	objs/
 
-SRCS_LIST =	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRCS_LIST =	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
 
 SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
 
