@@ -92,7 +92,22 @@ const char * Form::GradeTooHighException::what() const throw()
 	return "Grade of bureaucrat too high";
 }
 
-/* std::ostream	&operator<<(std::ostream &out, const Form src){
+bool Form::require(const Bureaucrat & executor) const
+{
+	if (executor.getGrade() > this->getToRun())
+	{
+		std::cout << "Grade too low to Run " << this->getName() << ", sorry " << executor.getName() << std::endl;
+		return false;
+	}
+	else if (this->getSigned() == false)
+	{
+		std::cout << this->getName() << "Form is not signed " << ", sorry " << executor.getName() << std::endl;
+		return false;
+	}
+	return true;
+}
+
+std::ostream	&operator<<(std::ostream &out, const Form &src){
 	out << "Form: " << src.getName() << " | signed " << src.getSigned() << " | grade to sign " << src.getToSign() << " | grade to run " << src.getToRun();
 	return out;
-} */
+}

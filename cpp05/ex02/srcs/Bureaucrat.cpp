@@ -72,9 +72,18 @@ void	Bureaucrat::gradedown(void)
 
 void  Bureaucrat::signForm(Form &src){
 	if (src.beSigned(*this) == true)
-		std::cout << this->getName() << " signed " << src.getName() << std::endl;
+		return;
+		//std::cout << this->getName() << " signed " << src.getName() << std::endl;
 	else
 		std::cout << this->getName() << " couldn't sign " << src.getName() << " because his grade is too low" << std::endl;
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	if (form.execute(*this) == false)
+		return;
+	else
+		return;
 }
 
 std::ostream&   operator<<( std::ostream& o, const Bureaucrat& rhs )

@@ -27,18 +27,35 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 	return *this;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+std::string ShrubberyCreationForm::getTarget() const
 {
-	if (executor.getGrade() >= this->getToRun())
+	return this->_target;
+}
+
+bool ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+{
+	if (this->require(executor) == false)
+		return false;
+	std::ofstream out;
+	out.open(this->getTarget()+"_shrubbery");
+	std::string tree[11] = {"     ccee88oo",
+	"  C8O8O8Q8PoOb o8oo",
+	" dOB69QO8PdUOpugoO9bD",
+	"CgggbU8OU qOp qOdoUOdcb",
+	"    6OuU  /p u gcoUodpP",
+	"      \\\\\\//  /douUP",
+	"        \\\\/\\////",
+	"         |||/\\",
+	"         |||\\/",
+	"         |||||",
+	"   .....//||||\\...."
+	};
+
+	for (int i = 0; i < 11; i++)
 	{
-		//std::cout << "Grade too low to Run " << this->getName() << ", sorry " << executor.getName() << std::endl;
-		return;
+		out << tree[i] << std::endl;
 	}
-	else if (this->getSigned() == false)
-	{
-		std::cout << this->getName() << "Form is not signed " << ", sorry " << executor.getName() << std::endl;
-		return;
-	}
-	std::cout << "form executed" << std::endl;
+	std::cout << "Shrubbery executed by : " << executor.getName() << std::endl;
+	return true;
 }
 

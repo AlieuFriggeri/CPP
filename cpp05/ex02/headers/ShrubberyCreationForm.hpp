@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+#include <fstream>
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
@@ -20,7 +21,8 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm & operator=(const ShrubberyCreationForm &assign);
 		
 		//methods
-		virtual void execute(Bureaucrat const &executor) const;
+		virtual bool execute(Bureaucrat const &executor) const;
+		std::string getTarget(void) const;
 	private:
 		std::string _target;
 };

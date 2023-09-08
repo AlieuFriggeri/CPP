@@ -27,7 +27,7 @@ class Form
 		int getToSign() const;
 		int getToRun() const;
 		bool beSigned(const Bureaucrat &src);
-		virtual void execute(Bureaucrat const & executor) const = 0;
+		virtual bool execute(Bureaucrat const & executor) const = 0;
 		
 		// Exceptions
 		class GradeTooLowException : public std::exception {
@@ -38,7 +38,7 @@ class Form
 			public:
 				virtual const char* what() const throw();
 		};
-		
+		bool require(const Bureaucrat &src) const;
 	private:
 		Form();
 		std::string _name;
@@ -47,5 +47,5 @@ class Form
 		int _toRun;
 		
 };
-//std::ostream	&operator<<(std::ostream &out, const Form src);
+std::ostream	&operator<<(std::ostream &out, const Form &src);
 #endif

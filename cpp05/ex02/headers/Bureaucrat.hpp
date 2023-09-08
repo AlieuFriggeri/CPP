@@ -37,6 +37,8 @@ class Bureaucrat
 			public:
 				virtual const char* what() const throw() {return "grade too low";}
 		};
+		void executeForm(Form const & form);
+
 		private:
 
 		const std::string _name;
