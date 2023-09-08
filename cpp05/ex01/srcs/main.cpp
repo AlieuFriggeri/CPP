@@ -7,7 +7,7 @@
 int main()
 {
 	Form form;
-	Bureaucrat john("john", 101);
+	Bureaucrat john("john", 100);
 	form.beSigned(john);
 	john.signForm(form);
 	// try

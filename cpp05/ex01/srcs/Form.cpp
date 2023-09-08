@@ -61,14 +61,15 @@ int Form::getToRun() const
 	return _toRun;
 }
 
-void Form::beSigned(const Bureaucrat &src)
+bool Form::beSigned(const Bureaucrat &src)
 {
 	try
 	{
 		if (this->getToSign() >= src.getGrade())
 		{
-			this->_signed = 0;
-			std::cout << this->getName() << " has been signed!" << std::endl;
+			this->_signed = true;
+			std::cout << this->getName() << " has been signed by : " << src.getName() << std::endl;
+			return true;
 		}
 		else
 			throw(Form::GradeTooLowException());
@@ -76,8 +77,9 @@ void Form::beSigned(const Bureaucrat &src)
 	catch(Form::GradeTooLowException &e)
 	{
 		std::cerr << e.what() << '\n';
+		return false;
 	}
-	
+	return true;
 }
 
 // Exceptions

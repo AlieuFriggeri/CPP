@@ -28,7 +28,7 @@ class Bureaucrat
 
 		void gradeup(void);
 		void gradedown(void);
-		void  signForm(const Form &src);
+		void  signForm(Form &src);
 		class GradeTooHighException : public std::exception{
 			public:
 				virtual const char* what() const throw() {return "grade too high";}
