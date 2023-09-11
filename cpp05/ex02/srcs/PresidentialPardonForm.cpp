@@ -28,6 +28,7 @@ bool PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	if (this->require(executor) == false)
 		return false;
+	std::cout << "Presidential Pardon executed by : " << executor.getName() << std::endl;
 	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 	return true;
 }

@@ -31,6 +31,7 @@ bool RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	int r = rand() % 2;
 	if (this->require(executor) == false)
 		return false;
+	std::cout << "Robotomy Request executed by : " << executor.getName() << std::endl;
 	if (r == 1)
 	{
 		std::cout << this->_target << " has been successfully robotomized" << std::endl;

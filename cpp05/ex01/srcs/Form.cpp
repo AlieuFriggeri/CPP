@@ -91,7 +91,7 @@ bool Form::beSigned(const Bureaucrat &src)
 		if (this->getToSign() >= src.getGrade())
 		{
 			this->_signed = true;
-			std::cout << this->getName() << " has been signed by : " << src.getName() << std::endl;
+			//std::cout << this->getName() << " has been signed by : " << src.getName() << std::endl;
 			return true;
 		}
 		else

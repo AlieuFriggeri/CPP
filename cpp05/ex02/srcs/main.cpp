@@ -13,8 +13,8 @@ int main()
 	ShrubberyCreationForm form("buisson");
 	PresidentialPardonForm form2("50 cent");
 	RobotomyRequestForm form3("etienne");
-	Bureaucrat john("John", 22);
-	Bureaucrat tom("Tom", 1);
+	Bureaucrat john("John", 1);
+	Bureaucrat tom("Tom", 50);
 	john.signForm(form2);
 	john.signForm(form);
 	john.signForm(form3);

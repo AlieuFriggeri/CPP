@@ -32,11 +32,13 @@ bool RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		return false;
 	if (r == 1)
 	{
+		std::cout << "Robotomy Request executed by : " << executor.getName() << std::endl;
 		std::cout << this->_target << " has been successfully robotomized" << std::endl;
 		return true;
 	}
 	else
 	{
+		std::cout << "Robotomy Request executed by : " << executor.getName() << std::endl;
 		std::cout << this->_target << " has not been robotomized, damn!" << std::endl;
 		return true;
 	}
