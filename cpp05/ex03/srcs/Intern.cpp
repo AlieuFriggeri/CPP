@@ -11,7 +11,8 @@ Intern::Intern()
 
 Intern::Intern(const Intern &copy)
 {
-	(void) copy;
+	(void)copy;
+	return *this;
 }
 
 

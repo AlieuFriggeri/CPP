@@ -7,7 +7,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const &target) : Form
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : Form(copy), _target(copy._target)
 {
-	(void) copy;
+
 }
 
 
@@ -20,7 +20,8 @@ PresidentialPardonForm::~PresidentialPardonForm()
 // Operators
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm &assign)
 {
-	(void) assign;
+	if (this != &assign)
+		*this = assign;
 	return *this;
 }
 

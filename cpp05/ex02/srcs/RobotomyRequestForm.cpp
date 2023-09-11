@@ -7,7 +7,6 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : Form("Robo
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form(copy), _target(copy._target)
 {
-	(void) copy;
 }
 
 
@@ -20,7 +19,8 @@ RobotomyRequestForm::~RobotomyRequestForm()
 // Operators
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &assign)
 {
-	(void) assign;
+	if (this != &assign)
+		*this = assign;
 	return *this;
 }
 
