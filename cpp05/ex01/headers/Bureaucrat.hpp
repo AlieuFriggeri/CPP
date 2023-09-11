@@ -31,11 +31,11 @@ class Bureaucrat
 		void  signForm(Form &src);
 		class GradeTooHighException : public std::exception{
 			public:
-				virtual const char* what() const throw() {return "grade too high";}
+				virtual const char* what() const throw() {return "Error: Bureaucrat: Grade too high";}
 		};
 		class GradeTooLowException : public std::exception{
 			public:
-				virtual const char* what() const throw() {return "grade too low";}
+				virtual const char* what() const throw() {return "Error: Bureaucrat: Grade too low";}
 		};
 		private:
 

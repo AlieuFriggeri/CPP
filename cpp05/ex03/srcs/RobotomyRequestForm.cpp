@@ -20,7 +20,8 @@ RobotomyRequestForm::~RobotomyRequestForm()
 // Operators
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &assign)
 {
-	(void) assign;
+	if (this != &assign)
+		*this = assign;
 	return *this;
 }
 

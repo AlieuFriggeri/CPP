@@ -4,7 +4,7 @@
 Form::Form()
 {
 	_name = "Default form";
-	_signed = 1;
+	_signed = false;
 	_toSign = 100;
 	_toRun = 70;
 }
@@ -21,8 +21,31 @@ Form::Form(std::string name, bool sign, int toSign, int toRun)
 {
 	_name = name;
 	_signed = sign;
-	_toSign = toSign;
-	_toRun = toRun;
+	try
+	{
+		if (toSign > 150 || toRun > 150)
+		{
+			_toSign = 100;
+			_toRun = 70;
+			throw (Form::GradeTooLowException());
+		}
+		else if (toSign < 1 || toRun < 1)
+		{
+			_toSign = 100;
+			_toRun = 70;
+			throw(Form::GradeTooHighException());
+		}
+		_toSign = toSign;
+		_toRun = toRun;
+	}
+	catch(Form::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch(Form::GradeTooHighException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 
@@ -85,11 +108,11 @@ bool Form::beSigned(const Bureaucrat &src)
 // Exceptions
 const char * Form::GradeTooLowException::what() const throw()
 {
-	return "grade too low";
+	return "Error: Form: Grade too low";
 }
 const char * Form::GradeTooHighException::what() const throw()
 {
-	return "grade too high";
+	return "Error: Form: Grade too high";
 }
 
 std::ostream	&operator<<(std::ostream &out, const Form src){

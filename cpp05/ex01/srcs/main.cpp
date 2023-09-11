@@ -6,10 +6,11 @@
 
 int main()
 {
-	Form form;
-	Bureaucrat john("john", 100);
-	form.beSigned(john);
+	Form form("zes", false, 222, 222);
+	Bureaucrat john("john", 140);
+	std::cout << form << std::endl;
 	john.signForm(form);
+	std::cout << form << std::endl;
 	// try
 	// {
 	// 	john.gradeup();
