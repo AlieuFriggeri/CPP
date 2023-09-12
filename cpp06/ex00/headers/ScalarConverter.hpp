@@ -18,7 +18,11 @@ class ScalarConverter
 		ScalarConverter & operator=(const ScalarConverter &assign);
 		void convert(std::string input);
 		void identify(std::string input);
+		bool isChar(std::string input);
 		bool isInt(std::string input);
+		bool isfd(std::string input);
+		bool ftoi(std::string input);
+		void printVal(void);
 
 	private:
 		std::string _str;
