@@ -16,21 +16,23 @@ Base *generate(void)
 {
 	Base *res;
 	int r = rand() % 3;
-
 	if (r == 1)
 	{
-		A a;
-		return res = &a;
+		A *a = new A;
+		res = a;
+		return res;
 	}
 	else if (r == 2)
 	{
-		B b;
-		return res = &b;
+		B *b = new B;
+		res = b;
+		return res;
 	}
 	else
 	{
-		C c;
-		return res = &c;
+		C *c = new C;
+		res = c;
+		return res;
 	}
 }
 
@@ -55,22 +57,22 @@ void identify(Base& p)
 {
 	try
 	{
-		dynamic_cast<A&>(p);
-		std::cout << "A" << std::endl;
+			(void)dynamic_cast<A&>(p);
+			std::cout << "A" << std::endl;
 	}
 	catch(std::bad_cast&)
 	{
 		
 		try
 		{
-			dynamic_cast<B&>(p);
+			(void)dynamic_cast<B&>(p);
 			std::cout << "B" << std::endl;
 		}
 		catch(std::bad_cast&)
 		{
 			try
 			{
-				dynamic_cast<C&>(p);
+				(void)dynamic_cast<C&>(p);
 				std::cout << "C" << std::endl;
 			}
 			catch(std::bad_cast&)
@@ -79,16 +81,14 @@ void identify(Base& p)
 			}
 		}
 	}	
-
-	std::cout << "Unknown type" << std::endl;
 }
 
 int main()
 {
 	srand(time(NULL));
-	C a;
-	Base &ptr = a;
+	// B a;
+	// Base &ptr = a;
 	//ptr = &a;
-	identify(ptr);
+	identify(generate());
 	return 0;
 }
