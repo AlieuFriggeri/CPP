@@ -56,8 +56,8 @@ bool ScalarConverter::isInt(std::string input)
 			return false;
 	}
 	_n = atoi(input.c_str());
-	_d = atof(input.c_str());
-	if (_d > INT32_MAX)
+	_d = strtod(input.c_str(), NULL);
+	if (_d > 2147483647 || _d < -2147483648)
 		_intOverflow = true;
 	if (_d > std::numeric_limits<float>::max())
 		_floatOverflow = true;
@@ -117,13 +117,13 @@ bool ScalarConverter::ftoi(std::string input)
 	//std::cout << "ftoi" << std::endl;
 	if (input.at(input.length() - 1) == 'f')
 		{
-			_f = atof(input.c_str());
+			_f = strtof(input.c_str(), NULL);
 			//std::cout << _f << "f" <<  std::endl;
 			return true;
 		}
 	else
 		{
-			_d = atof(input.c_str());
+			_d = strtod(input.c_str(), NULL);
 			//std::cout << _d << std::endl;
 			return false;
 		}
@@ -174,7 +174,7 @@ bool ScalarConverter::isLiteral(std::string input)
 
 void ScalarConverter::printVal(void)
 {
-	if (_intOverflow == true)
+	if (_intOverflow == true || _d > 2147483647 || _d < -2147483648)
 		std::cout << "int: overflow" << std::endl;
 	else
 		std::cout << "int: "<< _n << std::endl;
@@ -182,8 +182,8 @@ void ScalarConverter::printVal(void)
 	if (_floatOverflow == true)
 		std::cout << "float: overflow" << std::endl;
 	else
-		std::cout << "float: " << std::setprecision(5) << _f << "f" << std::endl;
-	std::cout << "double: "<< std::setprecision(5) << _d << std::endl;
+		std::cout << "float: " << std::setprecision(3) << _f << "f" << std::endl;
+	std::cout << "double: "<< std::setprecision(3) << _d << std::endl;
 	if (isprint(_c) != 0 && _n >= 0 && _n <= 127)
 		std::cout << "char: " << "'" <<_c << "'" << std::endl;
 	else

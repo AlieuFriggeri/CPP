@@ -7,7 +7,8 @@
 int main(int ac, char **av)
 {
 	ScalarConverter conv;
-	(void)ac;
+	if (ac != 2)
+		return 1;
 	//(void)av;
 	//std::cout << std::numeric_limits<float>::max() << std::endl;
 	conv.convert(av[1]);
