@@ -18,6 +18,7 @@ class ScalarConverter
 		ScalarConverter & operator=(const ScalarConverter &assign);
 		void convert(std::string input);
 		void identify(std::string input);
+		bool isLiteral(std::string input);
 		bool isChar(std::string input);
 		bool isInt(std::string input);
 		bool isfd(std::string input);
@@ -31,6 +32,8 @@ class ScalarConverter
 		double _d;
 		char _c;
 		bool _possible;
+		bool _intOverflow;
+		bool _floatOverflow;
 };
 
 #endif

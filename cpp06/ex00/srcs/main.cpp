@@ -1,6 +1,7 @@
 #include <iostream>
 #include <exception>
 #include <string>
+#include <limits>
 #include "../headers/ScalarConverter.hpp"
 
 int main(int ac, char **av)
@@ -8,8 +9,9 @@ int main(int ac, char **av)
 	ScalarConverter conv;
 	(void)ac;
 	//(void)av;
+	//std::cout << std::numeric_limits<float>::max() << std::endl;
 	conv.convert(av[1]);
-	std::cout << "main" << std::endl;
+	//std::cout << "main" << std::endl;
 /* 	int x = 0;
 	
 	char c = static_cast <char>(x);
