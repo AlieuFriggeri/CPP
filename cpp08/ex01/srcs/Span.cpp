@@ -43,20 +43,16 @@ int Span::longestSpan(void)
 int Span::shortestSpan(void)
 {
 	int min = 2147483647;
+	_lst.sort();
 	std::list<int>::iterator j = _lst.begin();
-	for (std::list<int>::iterator i = _lst.begin(); i != _lst.end(); i++)
+	for (std::list<int>::iterator i = _lst.begin(); i != _lst.end() ; i++)
 	{
-		if (i != _lst.begin())
+		if (i == _lst.end())
+			break;
+		if (i != _lst.begin() && i != _lst.begin()++)
 		{
-			std::cout << *j << " && " << *i << std::endl;
-			*j = *i - 1;
-			if (*j - *i < min)
-			{
-				if (*j > *i)
-					min = *j - *i;
-				else
-					min = *i - *j;
-			}
+			if (*i - *j < min)
+				min = *i - *j;
 			j++;
 		}
 	}
