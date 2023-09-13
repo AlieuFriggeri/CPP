@@ -21,6 +21,8 @@ class Span
 		Span & operator=(const Span &assign);
 
 		void addNumber(int n);
+		int shortestSpan(void);
+		int longestSpan(void);
 		class limitexception : public std::exception{
 		public:
 			virtual const char *what() const throw() {return "Error: addNumber: span already have max amount of members";}
