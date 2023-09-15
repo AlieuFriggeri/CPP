@@ -22,7 +22,7 @@ class Bitcoin {
 
 		void setMap(std::string path);
 		void printBitcoin(void);
-		void dateCompare(std::map<std::string, float>::iterator it);
+		void dateCompare(std::string str);
 		void setInput(std::string path);
 		void printInput(void);
 
