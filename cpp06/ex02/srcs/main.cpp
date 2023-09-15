@@ -89,6 +89,8 @@ int main()
 	// B a;
 	// Base &ptr = a;
 	//ptr = &a;
-	identify(generate());
+	Base *x = generate();
+	identify(x);
+	delete x;
 	return 0;
 }
