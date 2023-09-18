@@ -71,7 +71,10 @@ void	Bureaucrat::gradedown(void)
 }
 
 void  Bureaucrat::signForm(Form &src){
-	if (src.beSigned(*this) == true)
+	
+	if (src.getSigned() == true)
+		std::cout << src.getName() << " is already signed, sorry " << this->getName() << std::endl;
+	else if (src.beSigned(*this) == true)
 		std::cout << this->getName() << " signed " << src.getName() << std::endl;
 	else
 		std::cout << this->getName() << " couldn't sign " << src.getName() << " because his grade is too low" << std::endl;

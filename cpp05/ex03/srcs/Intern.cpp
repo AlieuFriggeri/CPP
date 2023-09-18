@@ -46,6 +46,8 @@ Form *Intern::makeForm(std::string type, std::string target)
 			return ret;
 		}
 	}
+	for (int i = 0; i < 3; i++)
+		delete forms[i];
 	std::cout << "Intern: Error: Form type does not exist!" << std::endl;
 	return NULL;
 }

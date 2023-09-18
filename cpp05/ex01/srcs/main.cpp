@@ -10,6 +10,7 @@ int main()
 	Bureaucrat john("john", 1);
 	std::cout << form << std::endl;
 	john.signForm(form);
+	john.signForm(form);
 	std::cout << form << std::endl;
 	// try
 	// {

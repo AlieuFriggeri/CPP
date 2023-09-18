@@ -15,8 +15,12 @@ int main()
 	Intern jerome;
 	Bureaucrat etienne("etienn", 1);
 	ptr = jerome.makeForm("robotomy request", "damien");
-	etienne.signForm(*ptr);
-	etienne.executeForm(*ptr);
+	if (ptr)
+	{
+		etienne.signForm(*ptr);
+		etienne.signForm(*ptr);
+		etienne.executeForm(*ptr);
+	}
 	delete ptr;
 	// ShrubberyCreationForm form("buisson");
 	// PresidentialPardonForm form2("50 cent");

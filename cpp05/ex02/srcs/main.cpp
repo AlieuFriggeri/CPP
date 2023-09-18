@@ -14,13 +14,16 @@ int main()
 	PresidentialPardonForm form2("50 cent");
 	RobotomyRequestForm form3("etienne");
 	Bureaucrat john("John", 1);
-	Bureaucrat tom("Tom", 50);
+	Bureaucrat tom("Tom", 44);
+	Bureaucrat didier("didier", 2);
 	john.signForm(form2);
 	john.signForm(form);
 	john.signForm(form3);
+	john.signForm(form3);
 	john.executeForm(form);
-	tom.executeForm(form2);
 	tom.executeForm(form3);
+	tom.executeForm(form2);
+	didier.executeForm(form2);
 	// try
 	// {
 	// 	john.gradeup();
