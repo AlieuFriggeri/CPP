@@ -20,7 +20,8 @@ Serializer::~Serializer()
 // Operators
 Serializer & Serializer::operator=(const Serializer &assign)
 {
-	(void) assign;
+	if (this != &assign)
+		*this = assign;
 	return *this;
 }
 

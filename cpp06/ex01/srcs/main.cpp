@@ -10,7 +10,7 @@ int main()
 	Serializer s;
 	//uintptr_t ptr2;
 	val.age = 18;
-	val.name = "pute";
+	val.name = "salop";
 	std::cout << (Data *)s.serialize(&val) << std::endl;
 	std::cout << s.deserialize(s.serialize(&val)) << std::endl;
 	return 0;

@@ -11,9 +11,9 @@ ScalarConverter::ScalarConverter()
 {
 }
 
-ScalarConverter::ScalarConverter(const ScalarConverter &copy)
+ScalarConverter::ScalarConverter(const ScalarConverter &copy) :  _str(copy._str), _n(copy._n), _f(copy._f), _d(copy._d), _c(copy._c), _possible(copy._possible), _intOverflow(copy._intOverflow), _floatOverflow(copy._floatOverflow)
 {
-	*this = copy;
+
 }
 
 
@@ -26,7 +26,8 @@ ScalarConverter::~ScalarConverter()
 // Operators
 ScalarConverter & ScalarConverter::operator=(const ScalarConverter &assign)
 {
-	(void) assign;
+	if (this != &assign)
+		*this = assign;
 	return *this;
 }
 
@@ -132,7 +133,7 @@ bool ScalarConverter::ftoi(std::string input)
 
 bool ScalarConverter::isChar(std::string input)
 {
-	if (input.length() != 1)
+	if (input.length() != 1 || isdigit(input[0]) == true)
 		return false;
 	_c = input[0];
 	_possible = true;
@@ -182,9 +183,9 @@ void ScalarConverter::printVal(void)
 	if (_floatOverflow == true)
 		std::cout << "float: overflow" << std::endl;
 	else
-		std::cout << "float: " << std::setprecision(3) << _f << "f" << std::endl;
-	std::cout << "double: "<< std::setprecision(3) << _d << std::endl;
-	if (isprint(_c) != 0 && _n >= 0 && _n <= 127)
+		std::cout << "float: " << std::setprecision(1) << _f << "f" << std::endl;
+	std::cout << "double: "<< std::setprecision(1) << _d << std::endl;
+	if (isprint(_c) == true && _n >= 0 && _n <= 127)
 		std::cout << "char: " << "'" <<_c << "'" << std::endl;
 	else
 		std::cout << "char: non printable char" << std::endl;

@@ -90,7 +90,13 @@ int main()
 	// Base &ptr = a;
 	//ptr = &a;
 	Base *x = generate();
+	Base *y = generate();
+	Base *z = generate();
 	identify(x);
+	identify(y);
+	identify(z);
 	delete x;
+	delete y;
+	delete z;
 	return 0;
 }

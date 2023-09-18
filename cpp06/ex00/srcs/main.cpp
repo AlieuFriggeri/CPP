@@ -8,7 +8,10 @@ int main(int ac, char **av)
 {
 	ScalarConverter conv;
 	if (ac != 2)
+	{
+		std::cout << "please enter 1 argument" << std::endl;
 		return 1;
+	}
 	//(void)av;
 	//std::cout << std::numeric_limits<float>::max() << std::endl;
 	conv.convert(av[1]);
