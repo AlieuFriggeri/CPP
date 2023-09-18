@@ -6,7 +6,7 @@
 #    By: kistod <kistod@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 10:58:16 by afrigger          #+#    #+#              #
-#    Updated: 2023/09/17 13:24:37 by kistod           ###   ########.fr        #
+#    Updated: 2023/09/17 13:24:50 by kistod           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ RED = \033[0;31m
 GREY = \033[38;5;240m
 RESET = \033[0m
 
-NAME =     RPN
+NAME =     PmergeMe
 
 CC =         c++
 CFLAGS =     -Wall -Wextra -Werror -std=c++98
@@ -25,7 +25,7 @@ DIR_H = headers/
 DIR_S =	srcs/
 DIR_O =	objs/
 
-SRCS_LIST =	main.cpp RPN.cpp
+SRCS_LIST =	main.cpp PmergeMe.cpp
 
 SRCS =		${addprefix ${DIR_S}, ${SRCS_LIST}}
 

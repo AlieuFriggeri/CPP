@@ -16,6 +16,5 @@ int main( int ac, char **av ) {
 		return 1;
 	}
 	rpn.setStack(av[1]);
-
 	return 0;
 }
