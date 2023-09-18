@@ -63,5 +63,6 @@ int main( int ac, char **av ) {
 	
 	std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector = " << static_cast<double>(endv - startv) / CLOCKS_PER_SEC * 1000 << " us" << std::endl;
 	std::cout << "Time to process a range of " << ac - 1 << " elements with std::list = " << static_cast<double>(endl - startl) / CLOCKS_PER_SEC * 1000  << " us" << std::endl;
+	
 	return 0;
 }

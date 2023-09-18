@@ -11,8 +11,7 @@ Intern::Intern()
 
 Intern::Intern(const Intern &copy)
 {
-	(void)copy;
-	return *this;
+	*this = copy;
 }
 
 
@@ -25,7 +24,8 @@ Intern::~Intern()
 // Operators
 Intern & Intern::operator=(const Intern &assign)
 {
-	(void) assign;
+	if (this != &assign)
+		*this = assign;
 	return *this;
 }
 
