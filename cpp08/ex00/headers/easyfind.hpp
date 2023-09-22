@@ -7,9 +7,14 @@
 #include <map>
 
 template<typename T>
-int easyfind(T x, int tofind)
+typename T::iterator easyfind(T &x, int tofind)
 {
-	return *(std::find(x.begin(), x.end(), tofind));
+	typename T::iterator it;
+
+	it = std::find(x.begin(), x.end(), tofind);
+	if (it == x.end())
+		std::cout << "No occurence of " << tofind << " found" << std::endl;
+	return it;
 }
 
 

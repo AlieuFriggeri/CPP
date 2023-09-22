@@ -21,6 +21,7 @@ class Span
 		Span & operator=(const Span &assign);
 
 		void addNumber(int n);
+		void addNumbers(unsigned int range);
 		int shortestSpan(void);
 		int longestSpan(void);
 		class limitexception : public std::exception{

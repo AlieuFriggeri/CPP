@@ -6,21 +6,40 @@
 #include <string>
 #include "../headers/easyfind.hpp"
 
+int main()
+{
+	std::list<int> test;
+	test.push_back(155);
+	test.push_back(156);
+	test.push_back(157);
 
-int main( void ) {
-	std::list<char> l;
+	std::list<int>::const_iterator	it = test.end();
 
-	l.push_back('c');
-	l.push_back('a');
-	l.push_back('h');
-	l.push_back('g');
-	l.push_back('3');
-	l.push_back('*');
+	try
+	{
+		it = ::easyfind(test, 155);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
-	char res = easyfind(l, 23);
-	std::cout << *std::find(l.begin(), l.end(), 23) << std::endl;
-	std::cout << res << std::endl;
-	res = easyfind(l, 42);
-	std::cout << *std::find(l.begin(), l.end(), 42) << std::endl;
-	std::cout << res << std::endl;
+	if (it != test.end())
+		std::cout << *it << " found" << std::endl;
+
+	it = test.end();
+
+	try
+	{
+		it = ::easyfind(test, 15);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	if (it != test.end())
+		std::cout << *it << " found" << std::endl;
+
+	return (0);
 }

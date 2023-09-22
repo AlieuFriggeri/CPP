@@ -17,5 +17,28 @@ int main()
 	sp.addNumber(11);
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
+
+	try
+	{
+ 		sp.addNumber(8);
+	}
+	catch (Span::limitexception & e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	Span sp2 = Span(25000);
+	try
+	{
+		sp2.addNumbers(25000);
+		std::cout << "25k numbers added to span" << std::endl;
+		sp2.addNumber(18);
+	}
+	catch(Span::limitexception & e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << sp2.longestSpan() << std::endl;
+	std::cout << sp2.shortestSpan() << std::endl;
 	return 0;
 }

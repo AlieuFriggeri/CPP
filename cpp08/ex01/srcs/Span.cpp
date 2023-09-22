@@ -59,3 +59,19 @@ int Span::shortestSpan(void)
 	
 	return min;
 }
+
+void Span::addNumbers(unsigned int range)
+{
+	srand(time(NULL));
+
+	for (unsigned int i = 0; i < range; i++)
+	{
+		if (_lst.size() == _limit)
+		{
+			throw(limitexception());
+			return;
+		}
+		addNumber(rand());
+	}
+	
+}
